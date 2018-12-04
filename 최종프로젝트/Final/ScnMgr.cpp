@@ -14,13 +14,14 @@ ScnMgr::~ScnMgr()
 {
 	
 }
-
+Plane player;
 
 GLvoid ScnMgr::drawscene()
 {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glPushMatrix();
 	//카메라 행렬 적용
 	//
 
@@ -29,7 +30,8 @@ GLvoid ScnMgr::drawscene()
 	//장애물
 
 	//주인공 
-
+	player.draw();
+	glPopMatrix();
 	glutSwapBuffers();
 	return GLvoid();
 }
