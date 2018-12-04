@@ -4,6 +4,7 @@ h:\cg2\최종프로젝트\final\main.cpp(17): warning C4244: '인수': 'time_t'�
   MyCamera.cpp
   Pipe.cpp
   Plane.cpp
+h:\cg2\최종프로젝트\final\plane.cpp(27): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
   ScnMgr.cpp
   stdafx.cpp
   코드를 생성하고 있습니다...

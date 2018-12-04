@@ -6,7 +6,6 @@
 #include "Barrier.h"
 
 
-#include <GL/freeglut.h>
 
 class ScnMgr
 {	unsigned int m_WindowSizeX = 0;
