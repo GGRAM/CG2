@@ -4,9 +4,10 @@
 
 Plane::Plane()
 {
-	x = 0;
-	y = 0;
-	z = 0;
+	plane_pos.x = 0;
+	plane_pos.z = 0;
+	plane_pos.y = -0.7;
+	pos_angle = 0;
 }
 
 
@@ -17,7 +18,9 @@ Plane::~Plane()
 GLvoid Plane::draw()
 {
 	glPushMatrix();
-	glTranslatef(0, -0.7, 0);
+	glRotatef(pos_angle, 0, 0, 1);
+	glTranslatef(plane_pos.x, plane_pos.y, plane_pos.z);
+	glRotatef(action_angle, 0, 0, 1);
 
 	//Áß¾Ó ¸öÅë
 	glPushMatrix();
@@ -43,7 +46,7 @@ GLvoid Plane::draw()
 	glPushMatrix();		//À­ ±âµÕ
 	glTranslatef(0, 0.15, 0.0);
 	glColor3f(1, 1, 1);
-	glScalef(0.6, 0.7, 0.25);
+	glScalef(0.6, 0.7, 0.5);
 	glutSolidCube(0.2);
 
 	glPushMatrix();		//À­ ±âµÕ
@@ -57,7 +60,7 @@ GLvoid Plane::draw()
 
 
 	glPushMatrix();
-	glTranslatef(0, 0.07, 0.0);
+	glTranslatef(0, 0.07, -0.2);
 	glColor3f(0, 0, 1);
 	glScalef(0.1, 0.5, 0.1);
 	glutSolidCube(0.2);

@@ -10,7 +10,7 @@
 class ScnMgr
 {	unsigned int m_WindowSizeX = 0;
 	unsigned int m_WindowSizeY = 0;
-
+	static ScnMgr* myself;
 	Plane m_Plane;
 	Pipe *m_Pipe[MAX_PIPE];
 	Barrier *m_Barrier[MAX_BARRIER];
@@ -22,11 +22,12 @@ public:
 	~ScnMgr();
 
 	static GLvoid drawscene();
-
+	static GLvoid KeyDowninput(unsigned char key, int x, int y);
+	static GLvoid KeyUpinput(unsigned char key, int x, int y);
 	bool IsInitialized();
 	bool m_Initialized = false;
 
-	void Update(float eTime);
-
+	static GLvoid Update(float eTime);
+	static GLvoid Idle();
 };
 
