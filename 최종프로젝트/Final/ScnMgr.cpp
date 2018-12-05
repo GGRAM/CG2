@@ -3,7 +3,6 @@
 #include "Global.h"
 
 
-Plane m_plane;
 
 ScnMgr::ScnMgr(int windowSizeX, int windowSizeY)
 {
@@ -17,13 +16,16 @@ ScnMgr::~ScnMgr()
 {
 	
 }
-
+Plane player;
+GLfloat current_time;
+GLint current_frame = 0;
+GLfloat Prevtime = 0;
 
 GLvoid ScnMgr::drawscene()
 {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
 
 	glPushMatrix();
@@ -36,7 +38,7 @@ GLvoid ScnMgr::drawscene()
 
 	//ÁÖÀÎ°ø 
 
-	m_plane.draw();
+	player.draw();
 
 	glPopMatrix();
 
@@ -45,8 +47,46 @@ GLvoid ScnMgr::drawscene()
 	return GLvoid();
 }
 
+GLvoid ScnMgr::KeyDowninput(unsigned char key, int x, int y)
+{
 
+	switch (key)
+	{
+	case 'd':
+	case 'D':
+		player.setAngle(5);
+		player.setAction(-45);
+		break;
+	case 'a':
+	case 'A':
+		player.setAngle(-5);
+		player.setAction(45);
+		break;
+	default:
+		break;
+	}
+	return GLvoid();
 
+}
+
+GLvoid ScnMgr::KeyUpinput(unsigned char key, int x, int y)
+{
+	switch (key)
+	{
+	case 'd':
+	case 'D':
+		player.setAction(0);
+		break;
+	case 'a':
+	case 'A':
+		player.setAction(0);
+		break;
+	default:
+		break;
+	}
+
+	return GLvoid();
+}
 
 void ScnMgr::Initialize(int windowSizeX, int windowSizeY)
 {
@@ -68,10 +108,34 @@ void ScnMgr::Initialize(int windowSizeX, int windowSizeY)
 	glFrontFace(GL_CCW);
 	glShadeModel(GL_SMOOTH);
 	glutDisplayFunc(drawscene);
-
+	glutKeyboardFunc(KeyDowninput);
+	glutKeyboardUpFunc(KeyUpinput);
+	glutIdleFunc(Idle);
 }
+
 
 bool ScnMgr::IsInitialized()
 {
 	return m_Initialized;
+}
+GLvoid ScnMgr::Update(float eTime)
+{
+
+	glutPostRedisplay();
+	return GLvoid();
+}
+GLvoid ScnMgr::Idle()
+{
+	//
+	current_time = glutGet(GLUT_ELAPSED_TIME);
+	current_frame++;
+	if (current_time - Prevtime > 1000 / FPS_TIME) {
+
+
+
+		Prevtime = current_time;
+		current_frame = 0;
+	}
+	Update(current_time);
+	return GLvoid();
 }

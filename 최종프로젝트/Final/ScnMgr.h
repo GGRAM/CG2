@@ -22,11 +22,13 @@ public:
 	~ScnMgr();
 
 	static GLvoid drawscene();
-
+	static GLvoid KeyDowninput(unsigned char key, int x, int y);
+	static GLvoid KeyUpinput(unsigned char key, int x, int y);
 	bool IsInitialized();
 	bool m_Initialized = false;
 
-	void Update(float eTime);
+	static GLvoid Update(float eTime);
+	static GLvoid Idle();
 
 };
 

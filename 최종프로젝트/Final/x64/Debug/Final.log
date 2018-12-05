@@ -1,11 +1,6 @@
-﻿  Barrier.cpp
-  main.cpp
-h:\cg2\최종프로젝트\final\main.cpp(17): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  MyCamera.cpp
-  Pipe.cpp
-  Plane.cpp
-h:\cg2\최종프로젝트\final\plane.cpp(27): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-  ScnMgr.cpp
-  stdafx.cpp
-  코드를 생성하고 있습니다...
-  Final.vcxproj -> H:\CG2\최종프로젝트\x64\Debug\Final.exe
+﻿  ScnMgr.cpp
+c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\plane.h(13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\plane.h(14): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\plane.h(15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\scnmgr.cpp(130): warning C4244: '=': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Final.vcxproj -> C:\Users\trg03\Desktop\컴그\git_팀플\CG2\최종프로젝트\x64\Debug\Final.exe
