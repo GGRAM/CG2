@@ -71,12 +71,12 @@ GLvoid ScnMgr::KeyDowninput(unsigned char key, int x, int y)
 	{
 	case 'd':
 	case 'D':
-		player.setAngle(5);
+		player.setAngle(10);
 		player.setAction(-45);
 		break;
 	case 'a':
 	case 'A':
-		player.setAngle(-5);
+		player.setAngle(-10);
 		player.setAction(45);
 		break;
 	default:
@@ -139,7 +139,7 @@ bool ScnMgr::IsInitialized()
 
 GLvoid ScnMgr::Update(float eTime)
 {
-//	m_Cam.update(eTime);
+	m_Cam.update(eTime);
 	
 
 
