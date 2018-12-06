@@ -22,6 +22,7 @@ GLvoid Pipe::draw(){
 		glRotatef(60, 0, 0, 1);
 
 		glPushMatrix();
+
 		glTranslatef(-0.5, -1, 0);
 		glBegin(GL_QUADS);
 		glColor3f(color.x, color.y, color.z);
@@ -31,6 +32,9 @@ GLvoid Pipe::draw(){
 		glVertex3f(0, 0, 0.95);
 		glEnd();
 
+		if (B[i].set) 
+			B[i].draw(color);
+		
 
 		glPopMatrix();
 
@@ -41,9 +45,16 @@ GLvoid Pipe::draw(){
 }
 
 GLvoid Pipe::update(float t, Vertex3 colortype) {
-	z -= 0.1;
+	z -= t/1000000 +0.1;
 	if (z < -1) {
 		z += 10;
+		b= rand() % 12;
+		for (int i = 0; i < 6; ++i) {
+			
+				B[i].set = false;
+		}
+		if (b < 6)
+			B[b].set = true;
 	}
 
 	color.x = colortype.x - z / 10;

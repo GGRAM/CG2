@@ -4,7 +4,8 @@ class Pipe
 {
 	float z;
 	Vertex3 color;
-	Barrier a;
+	Barrier B[6];
+	int b;
 
 
 

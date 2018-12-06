@@ -155,7 +155,8 @@ GLvoid ScnMgr::Update(float eTime)
 
 	maincolor.set(0.7 + col1, 0.7 + col2, 0.7 + col3);
 
-	m_Cam.update(eTime);
+//	m_Cam.update(eTime);
+
 	for (int i = 0; i < MAX_PIPE; ++i) {
 		pipes[i].update(eTime, maincolor);
 	}
