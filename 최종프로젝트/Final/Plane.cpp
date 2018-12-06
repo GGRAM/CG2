@@ -5,7 +5,7 @@
 Plane::Plane()
 {
 	plane_pos.x = 0;
-	plane_pos.z = 0;
+	plane_pos.z = -0.5;
 	plane_pos.y = -0.7;
 	pos_angle = 0;
 }
@@ -17,6 +17,7 @@ Plane::~Plane()
 GLvoid Plane::draw() {
 	glPushMatrix();
 	glRotatef(pos_angle, 0, 0, 1);
+
 	glTranslatef(plane_pos.x, plane_pos.y, plane_pos.z);
 	glRotatef(action_angle, 0, 0, 1);
 

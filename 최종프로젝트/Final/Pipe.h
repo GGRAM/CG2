@@ -4,5 +4,6 @@ class Pipe
 public:
 	Pipe();
 	~Pipe();
+	GLvoid draw();
 };
 

@@ -1,6 +1,6 @@
 ﻿  ScnMgr.cpp
-c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\plane.h(13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\plane.h(14): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\plane.h(15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\trg03\desktop\컴그\git_팀플\cg2\최종프로젝트\final\scnmgr.cpp(130): warning C4244: '=': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Final.vcxproj -> C:\Users\trg03\Desktop\컴그\git_팀플\CG2\최종프로젝트\x64\Debug\Final.exe
+h:\cg2\최종프로젝트\final\plane.h(13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+h:\cg2\최종프로젝트\final\plane.h(14): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+h:\cg2\최종프로젝트\final\plane.h(15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+h:\cg2\최종프로젝트\final\scnmgr.cpp(153): warning C4244: '=': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Final.vcxproj -> H:\CG2\최종프로젝트\x64\Debug\Final.exe

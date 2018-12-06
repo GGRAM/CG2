@@ -4,7 +4,7 @@
 #include "Plane.h"
 #include "Pipe.h"
 #include "Barrier.h"
-
+#include "MyCamera.h"
 
 
 class ScnMgr
@@ -29,6 +29,5 @@ public:
 
 	static GLvoid Update(float eTime);
 	static GLvoid Idle();
-
 };
 
