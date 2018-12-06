@@ -75,12 +75,12 @@ GLvoid ScnMgr::KeyDowninput(unsigned char key, int x, int y)
 	{
 	case 'd':
 	case 'D':
-		player.setAngle(10);
+		player.setAngle(1);
 		player.setAction(-45);
 		break;
 	case 'a':
 	case 'A':
-		player.setAngle(-10);
+		player.setAngle(-1);
 		player.setAction(45);
 		break;
 	default:
@@ -96,10 +96,12 @@ GLvoid ScnMgr::KeyUpinput(unsigned char key, int x, int y)
 	{
 	case 'd':
 	case 'D':
+		player.setAngle(0);
 		player.setAction(0);
 		break;
 	case 'a':
 	case 'A':
+		player.setAngle(0);
 		player.setAction(0);
 		break;
 	default:
@@ -154,9 +156,8 @@ GLvoid ScnMgr::Update(float eTime)
 	float col3 = sin(t*col1) / 3;
 
 	maincolor.set(0.7 + col1, 0.7 + col2, 0.7 + col3);
-
-//	m_Cam.update(eTime);
-
+	player.updateAngle();
+	m_Cam.update(eTime);
 	for (int i = 0; i < MAX_PIPE; ++i) {
 		pipes[i].update(eTime, maincolor);
 	}
