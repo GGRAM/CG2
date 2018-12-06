@@ -1,13 +1,15 @@
 #include "stdafx.h"
 #include "ScnMgr.h"
 #include "Global.h"
-
+#include "math.h"
 
 
 ScnMgr::ScnMgr(int windowSizeX, int windowSizeY)
 {
 	Initialize(windowSizeX, windowSizeY);
 	drawscene();
+
+
 
 }
 
@@ -20,6 +22,7 @@ ScnMgr::~ScnMgr()
 Plane player;
 MyCamera m_Cam;
 Pipe pipes[MAX_PIPE] = { 0,1,2,3,4,5,6,7,8,9 };
+Vertex3 maincolor(1,1,1);
 
 
 GLfloat current_time;
@@ -140,9 +143,21 @@ bool ScnMgr::IsInitialized()
 
 GLvoid ScnMgr::Update(float eTime)
 {
+	//칼라 업데이트
+	//float t = eTime/5000;
+	//float col1 = sin(t)/2;
+	//float col2 = sin(t*t)/2;
+	//float col3 = sin(t*t*t)/2;
+	float t = eTime / 1000;
+	float col1 = sin(t) / 3;
+	float col2 = cos(2*t) / 3;
+	float col3 = sin(t*col1) / 3;
+
+	maincolor.set(0.7 + col1, 0.7 + col2, 0.7 + col3);
+
 	m_Cam.update(eTime);
 	for (int i = 0; i < MAX_PIPE; ++i) {
-		pipes[i].update(eTime, Vertex3(1,1,1));
+		pipes[i].update(eTime, maincolor);
 	}
 
 	glutPostRedisplay();

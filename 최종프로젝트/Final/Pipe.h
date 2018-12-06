@@ -1,8 +1,11 @@
 #pragma once
+#include "Barrier.h"
 class Pipe
 {
 	float z;
 	Vertex3 color;
+	Barrier a;
+
 
 
 public:

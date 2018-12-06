@@ -30,6 +30,8 @@ GLvoid Pipe::draw(){
 		glVertex3f(1, 0, 0.95);
 		glVertex3f(0, 0, 0.95);
 		glEnd();
+
+
 		glPopMatrix();
 
 

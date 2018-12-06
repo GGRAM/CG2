@@ -10,3 +10,8 @@ Barrier::Barrier()
 Barrier::~Barrier()
 {
 }
+
+GLvoid Barrier::draw(int pos) {
+
+
+}
