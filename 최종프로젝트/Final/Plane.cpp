@@ -17,52 +17,45 @@ Plane::~Plane()
 GLvoid Plane::draw() {
 	glPushMatrix();
 	glRotatef(pos_angle, 0, 0, 1);
-
 	glTranslatef(plane_pos.x, plane_pos.y, plane_pos.z);
+	//glRotatef(30, 1, 0, 0);
 	glRotatef(action_angle, 0, 0, 1);
 
 	//Áß¾Ó ¸öÅë
 	glPushMatrix();
 	glColor3f(1, 1, 1);
-	glScalef(1.0, 0.6, 2.0);
+	glScalef(0.7, 0.3, 1.2);
 	glutSolidCube(0.2);
-	//glColor3f(0, 0, 0);
-	//glutWireCube(0.25);
-	glPushMatrix();		//¿Þ³¯°³
-	glColor3f(1, 0, 0);
-	glTranslatef(-0.143, -0.04, 0.0);
-	glScalef(0.7, 1.0, 1.0);
-	glutSolidCube(0.12);
-	glPopMatrix();
-
-	glPushMatrix();		//¿À¸¥³¯°³
-	glColor3f(1, 0, 0);
-	glTranslatef(0.143, -0.04, 0.0);
-	glScalef(0.7, 1.0, 1.0);
-	glutSolidCube(0.12);
-	glPopMatrix();
-
-	glPushMatrix();		//À­ ±âµÕ
-	glTranslatef(0, 0.15, 0.0);
-	glColor3f(1, 1, 1);
-	glScalef(0.6, 0.7, 0.5);
-	glutSolidCube(0.2);
-
-	glPushMatrix();		//À­ ±âµÕ
-	glTranslatef(0, 0.16, 0.0);
-	glColor3f(0, 0, 1);
-	glScalef(0.6, 0.7, 0.25);
-	glutSolidCube(0.2);
-	glPopMatrix();
-	glPopMatrix();
-	glPopMatrix();
-
+	glColor3f(0, 0, 0);
+	glutWireCube(0.2);
 
 	glPushMatrix();
-	glTranslatef(0, 0.07, -0.2);
-	glColor3f(0, 0, 1);
-	glScalef(0.1, 0.5, 0.1);
+	glColor3f(1, 0, 0);
+	glScalef(2.0, 0.5, 0.25);
 	glutSolidCube(0.2);
+	glColor3f(0, 0, 0);
+	glutWireCube(0.2);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(0, 0, 0.12);
+	glColor3f(0, 0, 1);
+	glScalef(1.2, 0.3, 0.3);
+	glutSolidCube(0.15);
+	glColor3f(0, 0, 0);
+	glutWireCube(0.15);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(0, 0.05, 0);
+	glColor3f(0, 1, 0);
+	glScalef(0.25, 0.5, 0.25);
+	glutSolidCube(0.2);
+	glColor3f(0, 0, 0);
+	glutWireCube(0.2);
+	glPopMatrix();
+
+
 	glPopMatrix();
 
 	glPopMatrix();
