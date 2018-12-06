@@ -14,6 +14,8 @@ class ScnMgr
 	Plane m_Plane;
 	Pipe *m_Pipe[MAX_PIPE];
 	Barrier *m_Barrier[MAX_BARRIER];
+
+
 	void Initialize(int windowSizeX, int windowSizeY);
 
 

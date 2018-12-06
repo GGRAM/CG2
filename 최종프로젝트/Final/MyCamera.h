@@ -1,4 +1,6 @@
 #pragma once
+#include "Global.h"
+
 class MyCamera
 {
 public:

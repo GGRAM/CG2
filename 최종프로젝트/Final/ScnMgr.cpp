@@ -19,8 +19,7 @@ ScnMgr::~ScnMgr()
 //객체선언
 Plane player;
 MyCamera m_Cam;
-Pipe a;
-
+Pipe pipes[MAX_PIPE] = { 0,1,2,3,4,5,6,7,8,9 };
 
 
 GLfloat current_time;
@@ -35,7 +34,7 @@ GLvoid ScnMgr::drawscene()
 	glLoadIdentity();
 	glMatrixMode(GL_PROJECTION);
 	
-	gluPerspective(60.f, 1, 0.1, 3);
+	gluPerspective(60.f, 1, 0.1, 10);
 	glTranslatef(0, 0,-2);
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -48,7 +47,9 @@ GLvoid ScnMgr::drawscene()
 	
 
 	//배경
-	a.draw();
+	for (int i = 0; i < MAX_PIPE; ++i) {
+		pipes[i].draw();
+	}
 
 	//장애물
 
@@ -140,8 +141,9 @@ bool ScnMgr::IsInitialized()
 GLvoid ScnMgr::Update(float eTime)
 {
 	m_Cam.update(eTime);
-	
-
+	for (int i = 0; i < MAX_PIPE; ++i) {
+		pipes[i].update(eTime, Vertex3(1,1,1));
+	}
 
 	glutPostRedisplay();
 	return GLvoid();

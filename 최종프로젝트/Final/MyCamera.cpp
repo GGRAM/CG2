@@ -6,7 +6,7 @@ MyCamera::MyCamera()
 {
 	x = 0; y = 0; z = 0;
 	C_angle = 0;
-	C_speed = 3;
+	C_speed = INIT_C_SPEED;
 	clock = 1;
 
 
@@ -27,7 +27,7 @@ GLvoid MyCamera::update(float t)
 	z = b;
 
 
-	C_speed = 3 + t / 40000;
+	C_speed = INIT_C_SPEED + t / 40000;
 	int temp = rand() % 100;
 	if (temp == 0)
 		clock = -clock;
